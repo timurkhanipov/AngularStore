@@ -30,10 +30,6 @@ export class DataService {
     return this.http.get<Item[]>('https://fakestoreapi.com/products');
   }
 
-  public GetItemsInTheBasketCount$(){
-    return of (this.itemsInTheBasketCount);
-  }
-
   public GetBasketItems$(): Observable<BasketItem[]> {
     const basketItemsObservable = from(this.itemsInTheBasket);
     const basketList = new Set(this.itemsInTheBasket);
